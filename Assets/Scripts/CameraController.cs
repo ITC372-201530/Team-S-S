@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour
 {
 	public GameObject player;
 	private Vector3 offset;
+	private int cameraDistance = 1;
 	
 	void Start () 
 	{
@@ -17,6 +18,30 @@ public class CameraController : MonoBehaviour
 		if (player.transform.position.y >= 1.0) {
 			transform.position = player.transform.position + offset;
 		}
+
+
+		if(Input.GetKeyDown(KeyCode.C))
+		{
+			if (cameraDistance == 1)
+			{
+				camera.fieldOfView = 100;
+				cameraDistance = 2;
+				return;
+			}
+			else if (cameraDistance == 2)
+			{
+				camera.fieldOfView = 125;
+				cameraDistance = 3;
+				return;
+			}
+			else if (cameraDistance == 3)
+			{
+				camera.fieldOfView = 55;
+				cameraDistance = 1;
+				return;
+			}
+		}
+
 	}
 	
 }

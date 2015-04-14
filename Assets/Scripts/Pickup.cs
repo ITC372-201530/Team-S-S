@@ -36,7 +36,4 @@ public class Pickup : MonoBehaviour {
 			grabedObject = this.gameObject;
 	}
 
-
-
-
 }
