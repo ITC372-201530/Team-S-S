@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.C))
+		if(Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.JoystickButton5))
 		{
 			if (cameraDistance == 1)
 			{
@@ -29,12 +29,6 @@ public class CameraController : MonoBehaviour
 				return;
 			}
 			else if (cameraDistance == 2)
-			{
-				camera.fieldOfView = 125;
-				cameraDistance = 3;
-				return;
-			}
-			else if (cameraDistance == 3)
 			{
 				camera.fieldOfView = 55;
 				cameraDistance = 1;

@@ -10,6 +10,7 @@ public class PlatformMovement : MonoBehaviour {
 	public string currentState;
 	public float smooth;
 	public float resetTime;
+	public Controller1 player;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,11 @@ public class PlatformMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		movingPlatform.position = Vector3.Lerp (movingPlatform.position, newPosition, smooth * Time.deltaTime);
+
+		if (!player.paused)
+		{
+			movingPlatform.position = Vector3.Lerp (movingPlatform.position, newPosition, smooth * Time.deltaTime);
+		}
 	}
 
 	void changeTarget ()
